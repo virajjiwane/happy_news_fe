@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "happy_news_fe",
+    "slug": "happy_news_fe"
+  }
+}
