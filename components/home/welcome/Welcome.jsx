@@ -11,6 +11,7 @@ import styles from "./welcome.style";
 import { useRouter } from "expo-router";
 import { COLORS } from "../../../constants";
 import useFetch from "../../../hook/useFetch";
+import NewsCard from "../../common/cards/news/NewsCard";
 
 const Welcome = () => {
   const router = useRouter();
@@ -22,7 +23,7 @@ const Welcome = () => {
       ) : error ? (
         <Text>Something went wrong</Text>
       ) : (
-        data.Items.map((item) => <Text key={item.epoch_in_milliseconds}>{item.title}</Text>)
+        data.Items.map((item) => <NewsCard key={item.epoch_in_milliseconds} news={item}/>)
       )}
     </View>
   );
