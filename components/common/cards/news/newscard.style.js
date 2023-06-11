@@ -33,15 +33,17 @@ const styles = StyleSheet.create({
     fontFamily: FONT.regular,
     color: "#B3AEC6",
     marginTop: SIZES.small / 1.5,
+    textAlign: "right",
+    flex: 1,
   },
   infoContainer: {
     marginTop: SIZES.large,
   },
-  jobName: (selectedJob, item) => ({
+  jobName: {
     fontSize: SIZES.large,
     fontFamily: FONT.medium,
-    color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
-  }),
+    color: COLORS.tertiary,
+  },
   infoWrapper: {
     flexDirection: "row",
     marginTop: 5,
