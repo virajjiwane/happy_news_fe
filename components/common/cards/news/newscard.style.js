@@ -54,9 +54,9 @@ const styles = StyleSheet.create({
     color: selectedJob === item.job_id ? COLORS.white : COLORS.primary,
   }),
   location: {
-    fontSize: SIZES.medium - 2,
+    fontSize: SIZES.medium,
     fontFamily: FONT.regular,
-    color: "#B3AEC6",
+    color: COLORS.gray,
   },
 });
 

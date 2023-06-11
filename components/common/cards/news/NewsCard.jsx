@@ -14,7 +14,11 @@ const NewsCard = ({ news }) => {
           }}
         />
       </View>
-      <Text>{news.title}</Text>
+      <View style={styles.infoContainer}>
+        <View style={styles.infoWrapper}>
+          <Text style={styles.location}>{news.title}</Text>
+        </View>
+      </View>
     </View>
 
     // <View style={styles.container}>
