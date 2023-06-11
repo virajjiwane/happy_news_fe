@@ -1,5 +1,5 @@
-import profile from "../assets/images/kemal.jpg";
+import logo from "../assets/images/bliss-bulletin-logo.png";
 
 export default {
-  profile,
+  logo,
 };
