@@ -17,6 +17,7 @@ const NewsCard = ({ news }) => {
           })
         );
       }}
+      key={news.epoch_in_milliseconds}
     >
       <View style={styles.container}>
         <View style={styles.logoContainer}>

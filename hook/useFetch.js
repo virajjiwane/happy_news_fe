@@ -16,8 +16,8 @@ const useFetch = (query) => {
         setisLoading(true);
         try {
             const response = await axios.request(options);
-            console.log(response.data);
-            setdata(response.data);
+            data.Items = data.Items.concat(response.data.Items);
+            setdata(data);
             setisLoading(false);
         } catch (error) {
             seterror(error);

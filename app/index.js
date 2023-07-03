@@ -9,6 +9,15 @@ import {
   ScreenHeaderBtn,
   Welcome,
 } from "../components";
+import useFetch from "../hook/useFetch";
+
+const isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => {
+  const paddingToBottom = 20;
+  return (
+    layoutMeasurement.height + contentOffset.y >=
+    contentSize.height - paddingToBottom
+  );
+};
 
 const Home = () => {
   const router = useRouter();
@@ -29,7 +38,15 @@ const Home = () => {
           headerShown: false,
         }}
       />
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        onScroll={({ nativeEvent }) => {
+          if (isCloseToBottom(nativeEvent)) {
+            // useFetch();
+          }
+        }}
+        scrollEventThrottle={400}
+      >
         <View
           style={{ flexHorizontal: "row", backgroundColor: COLORS.lightWhite }}
         >
