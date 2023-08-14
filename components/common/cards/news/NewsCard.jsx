@@ -36,7 +36,7 @@ const NewsCard = ({ news }) => {
             <Text style={styles.location}>{news.title}</Text>
           </View>
           <View style={{flexDirection:'row'}}>
-            <Text style={styles.companyName}>{Moment(news.publishedAt).local().format('dddd MMMM d, hA')}</Text>
+            <Text style={styles.companyName}>{Moment(news.publishedAt).local().format('dddd MMMM Do, hA')}</Text>
           </View>
         </View>
       </View>

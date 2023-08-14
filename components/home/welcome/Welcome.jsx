@@ -13,9 +13,8 @@ import { COLORS } from "../../../constants";
 import useFetch from "../../../hook/useFetch";
 import NewsCard from "../../common/cards/news/NewsCard";
 
-const Welcome = () => {
+const Welcome = ({ data, isLoading, error}) => {
   const router = useRouter();
-  const {data, isLoading, error} = useFetch({});
   return (
     <View>
       {isLoading ? (

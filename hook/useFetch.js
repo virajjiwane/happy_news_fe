@@ -13,13 +13,16 @@ const useFetch = (query) => {
     }
 
     const fetchData = async () => {
+        console.log("params", options);
         setisLoading(true);
         try {
             const response = await axios.request(options);
             data.Items = data.Items.concat(response.data.Items);
+            console.log(response.event);
             setdata(data);
             setisLoading(false);
         } catch (error) {
+            setisLoading(false);
             seterror(error);
             alert('There is an error');
         }finally{
@@ -34,7 +37,8 @@ const useFetch = (query) => {
     },[]);
 
     const refetch = ()=>{
-        setisLoading(true);
+        let lastArticle = data.Items.slice(-1);
+        options.params = {LastEvaluatedKey: lastArticle.epoch_in_milliseconds};
         fetchData();
     }
     

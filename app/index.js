@@ -21,6 +21,7 @@ const isCloseToBottom = ({ layoutMeasurement, contentOffset, contentSize }) => {
 
 const Home = () => {
   const router = useRouter();
+  const {data, isLoading, error, refetch} = useFetch({});
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite }}>
@@ -42,7 +43,7 @@ const Home = () => {
         showsVerticalScrollIndicator={false}
         onScroll={({ nativeEvent }) => {
           if (isCloseToBottom(nativeEvent)) {
-            // useFetch();
+            refetch();
           }
         }}
         scrollEventThrottle={400}
@@ -52,7 +53,7 @@ const Home = () => {
         >
           <Image
             source={require("../assets/images/logo.png")}
-            style={{ flex: 1, height: 100, width: 100, marginTop: SIZES.large }}
+            style={{ flex: 1, height: 60, width: 60, marginTop: SIZES.large }}
           />
         </View>
 
@@ -63,7 +64,11 @@ const Home = () => {
             backgroundColor: COLORS.lightWhite,
           }}
         >
-          <Welcome />
+          <Welcome 
+            data={data} 
+            isLoading={isLoading} 
+            error={error}
+          />
         </View>
       </ScrollView>
     </SafeAreaView>
